@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CampusShare – Terms of Use</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg-deep:    #12223B;
+      --bg-card:    #1a2e4a;
+      --bg-section: #162035;
+      --green:      #7CFC00;
+      --green-dim:  #4faf00;
+      --blue:       #0055FF;
+      --text-primary: #FFFFFF;
+      --text-muted:   #8fa8c8;
+      --border:     rgba(124,252,0,0.15);
+      --radius:     14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(160deg, #0d1b30 0%, #12223B 60%, #162035 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 24px 28px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .logo-svg {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+    }
+
+    .logo-svg rect { display: none; }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .brand span:first-child { color: var(--text-primary); }
+    .brand span:last-child  { color: var(--green); }
+
+    .doc-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-top: 4px;
+    }
+
+    .effective-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .toc-heading {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+    }
+
+    @media (max-width: 560px) { .toc ol { grid-template-columns: 1fr; } }
+
+    .toc ol li {
+      counter-increment: toc;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .toc ol li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--green-dim);
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .toc a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .18s;
+    }
+    .toc a:hover { color: var(--green); }
+
+    /* ── Sections ── */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      scroll-margin-top: 130px;
+    }
+
+    .section-number {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--green);
+      background: rgba(124,252,0,0.08);
+      border: 1px solid rgba(124,252,0,0.2);
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green);
+      margin: 20px 0 8px;
+      letter-spacing: .3px;
+    }
+
+    p { color: var(--text-muted); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    ul li {
+      color: var(--text-muted);
+      padding: 5px 0 5px 20px;
+      position: relative;
+      font-size: 14px;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      opacity: .7;
+    }
+
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ── Highlight / callout ── */
+    .callout {
+      background: rgba(124,252,0,0.05);
+      border-left: 3px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+    .callout p { color: #b8d8a0; font-size: 14px; }
+
+    .callout-warn {
+      background: rgba(255, 80, 80, 0.05);
+      border-left: 3px solid #ff5050;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+    .callout-warn p { color: #ffaaaa; font-size: 14px; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px 48px;
+      color: var(--text-muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer .brand-sm {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    footer .brand-sm span { color: var(--green); }
+
+    a.contact-link {
+      color: var(--green);
+      text-decoration: none;
+    }
+    a.contact-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <svg class="logo-svg" viewBox="0 0 338 410" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M250.895 90.5H226.599L225.793 94.0141L224.068 101.544L212.426 107.066L203.315 101.544L186.611 118.11L193.191 127.649L188.636 139.195L177.5 142.207V165.299L188.636 167.809L193.191 178.853L186.611 188.392L203.315 205.962L213.944 199.436L225.586 206.464L226.093 215.5H251.401L253.932 203.954L264.562 199.436L275.191 205.962L290.883 188.392L284.809 178.351L288.858 167.307L300.5 164.797V141.203L288.858 138.191L284.809 127.147L290.883 117.106L274.685 101.042L263.549 107.066L252.92 101.544L250.895 90.5Z" fill="#0000FF" stroke="#0000FF"/>
+      <path d="M216 119.5L209 125.5L204 131.5L201 137.5L199 146.5V160.5L200 163L204 173.5L212 183L221.5 190.5L234 193H246.5L250.5 192.5L259 188L268 180.5L273 174.5L276.5 167L278.5 158V145.5L276.5 138.5L272.5 131L269 125.5L261.5 119.5L251 114L243 113H232.5L223.5 115L216 119.5Z" fill="#12223B" stroke="#0000FF"/>
+      <path d="M231 120L218.5 126.5L213.5 130.5L208.5 137.5L206 145.5V158.5L207 162L210 170L216 177.5L224.5 183.5L232.5 186H246L249 185L256 181.5L263.5 175L268 168.5L270.5 163.5L271 158V145L270 142L268.5 137.5L264 131L258 125.5L252.5 122L245 120H231Z" fill="#0000FF" stroke="#0000FF"/>
+      <path d="M226 132L220.5 137.5L217.5 141.5L215.5 148.5V159L217.5 164L221.5 170L228.5 175L235 177H241.5L245.5 176L249 175L253.5 171.5L257.5 168L260.5 163.5L262 158V153L261.5 147.5L260.5 142L257.5 137.5L252.5 133.5L246.5 130L242.5 129H233.5L230.5 130L226 132Z" fill="#12223B" stroke="#0000FF"/>
+      <path d="M163 210H153L152.5 84.5H133L130 85L123 86L118.5 87L112.5 89L105.5 92.5L99 96L91 100.5L82.5 107.5L75.5 115L69.5 123L65.5 129L61.5 137.5L58.5 144.5L56 154.5L54.5 162V199L51.5 201.5H46L44 200.5V164L44.5 158.5L46 150L49.5 139L55.5 126L61 116.5L69.5 105.5L80 96L91 87.5L99 83.5L111.5 78.5L120.5 76L129 74H152.5V62.5L129.5 63L118.5 65L112 66.5L101 70.5L89.5 76L77.5 82.5L68.5 90.5L57 102.5L48.5 115L43 125L39 135L37 144L35 153L34 160.5L33.5 165.5V361L34.5 365L38 373.5L45 384.5L54.5 392.5L63 396.5L72 398H152.5V371H162.5L163 409.5L66.5 408L61 407L56.5 405L50.5 402.5L44 397.5L34.5 389.5L28.5 378.5L24.5 369.5L23.5 363L21.5 362L15 357L9 349.5L5.5 343.5L1.5 332L0.5 327.5V266.5L1.5 262.5L3 257L4 254L6 250L10.5 243L16.5 237L23.5 232V158.5L24.5 152L26 145.5L29 134L30.5 129L32.5 123.5L36 116L41 107.5L52 93L59 86L69 77L79 70L89.5 64L105.5 58.5V47.5L106 46L109 36.5L115 24L125 13L136 6L151 0.5H172L180.5 3L189 6.5L200 14L207 22.5L213 31.5L217 42.5L218.5 48V57H201.5V49L200 44L198 39L196 35L190.5 29L183.5 22.5L178 19.5L170.5 17H168H155.5L150.5 18L148 19L143 21L139 23.5L135 27L130 32L126.5 38L123.5 44L122.5 50V54.5L133 53.5H163V210Z" fill="#00FF00" stroke="#00FF00"/>
+      <path d="M13.5 256.5L23 244.5V349.5H21.5L13.5 338L11 329.5V263.5L13.5 256.5Z" fill="#0000FF" stroke="#0000FF"/>
+      <path d="M73.8693 210.5H162.5V245.216H161.504H43.4959V236.663L46.9813 229.116L50.4668 223.581L56.4419 218.047L61.4212 214.525L66.4004 211.506L73.8693 210.5Z" fill="#0000FF"/>
+      <path d="M42.5 254.775H161.504L162.002 370.997H161.006L72.3755 371.5L68.3921 370.997L60.9232 367.475L55.944 363.953L51.4627 359.928L48.4751 355.903L44.4917 348.356L42.5 341.312V254.775Z" fill="#0000FF"/>
+      <path d="M225.5 215H216.5L214 227.5L202 233.5L190.5 225.5L171 246L178.5 258.5L173 271L163 273V274V302.5L173 305L178.5 318.5L170.5 330L190.5 350L202.5 342.5L214.5 348L216.5 361H245L247 348L259.5 342L271 350L291 330L290.5 329L283.5 317L288 304.5L301 302V273L288 269.5L283 257.5L290.5 245.5L271.5 226L260 233.5L247 227L244.5 216.5H225.5V215Z" fill="#00FF00" stroke="#00FF00"/>
+      <path d="M215.5 241L205 247L200 251L191 261L184.5 279.5V294.5L186.5 303.5L191.5 314L199 323L208 330.5L223.5 336H236.5L241 334.5L249 331.5L259 326.5L267.5 317L273 307.5L277.5 295V281.5L276 274L272.5 265.5L266.5 256L258.5 249L248.5 242.5L238 240H222.5L215.5 241Z" fill="#12223B" stroke="#00FF00"/>
+      <path d="M265 308L268.5 300.5L270.5 293V280.5L267 270.5L262.5 263.5L256 256.5L247 250.5L240 248H222L217.5 249L212.5 252L205 257L200 261.5L194 271.5L191 282V293.5L192 298L196 307.5L202 315.5L209.5 322L218.5 326.5L226 328H237L244.5 326L253.5 321L260 315.5L265 308Z" fill="#00FF00" stroke="#00FF00"/>
+      <path d="M216 261L208 269L204 274.5L202 282V294.5L205 301.5L210 309L217.5 314.5L225.5 317.5H236.5L241.5 315.5L248 311.5L253.5 307L256 302.5L259 294.5V280L257 274L252.5 267.5L246.5 261.5L238 258.5L230.5 258L222.5 259L216 261Z" fill="#12223B" stroke="#00FF00"/>
+      <path d="M309 239V335H314.5L318.5 336L321.5 337L323 332L324 328L323 264V262L321.5 256.5L319.5 252.5L317.5 248L315 244.5L313 241.5L310.5 239H309Z" fill="#00FF00" stroke="#00FF00"/>
+      <path d="M292.5 345.5L285.5 350.5L282 353.5L279 357.5L275.5 364.5L274 370.5V382.5L276.5 388L279.5 394.5L284 400L292 406L299 409H311.5L318 406.5L326.5 401L332 394.5L335.5 387.5L337.5 380.5L337 369L336.5 366L334 360L330 354L325 349.5L315.5 344.5L308.5 343H302L298 344L292.5 345.5Z" fill="#00FF00" stroke="#00FF00"/>
+      <path d="M299.5 358.5L293.5 362.5L290.5 365.5L289.5 370V381L292 386.5L296.5 391.5L301.5 393H310.5L314.5 391L318.5 388.5L322 383V379V371L321 367L317.5 362L310.5 358H300L299.5 358.5Z" fill="#12223B" stroke="#00FF00"/>
+      <path d="M303 366.5L300 368.5L297 372V378L297.5 379.5L300.5 383L303 385L307 385.5L310 384.5L312.5 383L314 380L314.5 378V371.5L312 368.5L309 367L303 366.5Z" fill="#00FF00" stroke="#00FF00"/>
+    </svg>
+    <div class="brand"><span>Campus</span><span>Share</span></div>
+  </div>
+  <div class="doc-title">Terms of Use</div>
+  <div class="effective-date">Effective Date: June 23, 2026</div>
+</header>
+
+<div class="container">
+
+  <!-- Table of Contents -->
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-heading">Contents</div>
+    <ol>
+      <li><a href="#s1">Acceptance of Terms</a></li>
+      <li><a href="#s2">Eligibility</a></li>
+      <li><a href="#s3">User Conduct</a></li>
+      <li><a href="#s4">Community Rules</a></li>
+      <li><a href="#s5">Trust & Reputation System</a></li>
+      <li><a href="#s6">Security Deposit</a></li>
+      <li><a href="#s7">Campus Gig Services</a></li>
+      <li><a href="#s8">Academic Integrity</a></li>
+      <li><a href="#s9">Prohibited Activities</a></li>
+      <li><a href="#s10">Termination</a></li>
+      <li><a href="#s11">Disclaimer of Warranties</a></li>
+      <li><a href="#s12">Changes to Terms</a></li>
+      <li><a href="#s13">Contact</a></li>
+    </ol>
+  </nav>
+
+  <!-- Section 1 -->
+  <section class="section" id="s1">
+    <span class="section-number">01</span>
+    <h2>Acceptance of Terms</h2>
+    <p>By accessing or using CampusShare, you confirm that you are an enrolled student at IIT Roorkee, that you have read and understood these Terms of Use, and that you agree to be bound by them. If you do not agree, you must not use the application.</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section" id="s2">
+    <span class="section-number">02</span>
+    <h2>Eligibility</h2>
+    <p>CampusShare is exclusively available to currently enrolled students of IIT Roorkee. To register, you must provide:</p>
+    <ul>
+      <li>A valid IIT Roorkee G-Suite email address (@dept.iitr.ac.in)</li>
+      <li>A valid enrolment number (8-digit numeric format)</li>
+      <li>A valid username that meets our naming standards</li>
+      <li>Accurate gender information, which will be cross-verified by an administrator against your college ID</li>
+    </ul>
+    <div class="callout-warn">
+      <p>Providing false information during registration constitutes a material breach of these Terms and may result in <strong>immediate account termination</strong>.</p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section" id="s3">
+    <span class="section-number">03</span>
+    <h2>User Conduct</h2>
+    <p>By using CampusShare, you agree to:</p>
+    <ul>
+      <li>Use the platform only for legitimate peer-to-peer sharing, knowledge exchange, and campus gig services</li>
+      <li>Not impersonate any other student, administrator, or staff member</li>
+      <li>Not use the platform to harass, threaten, or harm any other user</li>
+      <li>Not attempt to gain unauthorized access to private communities (boys/girls community) through any method</li>
+      <li>Not post false, misleading, or fraudulent borrowing or gig requests</li>
+      <li>Honor all confirmed meetups and borrowing agreements</li>
+      <li>Return borrowed items in the same condition and within the agreed timeframe</li>
+      <li>Pay agreed gig fees honestly and promptly</li>
+    </ul>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section" id="s4">
+    <span class="section-number">04</span>
+    <h2>Community Rules</h2>
+    <p>CampusShare has three communities: <strong>Everyone</strong>, <strong>Boys Only</strong>, and <strong>Girls Only</strong>.</p>
+    <ul>
+      <li>The Boys Only and Girls Only communities are restricted access and require verified gender confirmation by an administrator</li>
+      <li>Any attempt to access a community you are not authorized for is strictly prohibited</li>
+      <li>Content posted in any community must be relevant, respectful, and appropriate for a college environment</li>
+      <li>Spam, advertising for external products, or irrelevant content is not permitted</li>
+    </ul>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section" id="s5">
+    <span class="section-number">05</span>
+    <h2>Trust and Reputation System</h2>
+    <p>CampusShare operates a trust scoring system that tracks your behavior on the platform. Trust points may be:</p>
+    <ul>
+      <li><strong>Awarded</strong> for completing meetups, returning items on time, helping other students, and positive ratings</li>
+      <li><strong>Deducted</strong> for missing meetups, returning items late or damaged, and negative ratings</li>
+    </ul>
+    <p>CampusShare reserves the right to adjust trust scores based on verified reports of misconduct. Trust scores are visible to other users and are an accurate reflection of your platform behavior.</p>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="section" id="s6">
+    <span class="section-number">06</span>
+    <h2>Security Deposit</h2>
+    <p>For borrowing transactions, a security deposit in the form of trust points may be locked at the time of borrowing. These points will be returned upon successful return of the item. In cases of non-return or damage, the points may be forfeited to the lender.</p>
+    <div class="callout-warn">
+      <p>CampusShare takes <strong>zero tolerance</strong> toward any attempt to manipulate or abuse the security deposit system.</p>
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section class="section" id="s7">
+    <span class="section-number">07</span>
+    <h2>Campus Gig Services</h2>
+    <p>CampusShare allows students to offer and request skill-based paid services (Campus Gigs). The <strong>minimum transaction amount is ₹50</strong>. By using Campus Gigs:</p>
+    <ul>
+      <li>You confirm that the service offered is legal and does not violate any academic integrity policy</li>
+      <li>CampusShare is not responsible for disputes between service providers and recipients</li>
+      <li>Payment is agreed between the parties and facilitated through Razorpay; CampusShare takes no cut from transactions</li>
+      <li>Gig services may not include academic dishonesty of any kind (see Section 8)</li>
+    </ul>
+  </section>
+
+  <!-- Section 8 -->
+  <section class="section" id="s8">
+    <span class="section-number">08</span>
+    <h2>Academic Integrity</h2>
+    <p>CampusShare strictly prohibits the use of its platform for any activity that violates academic integrity. This includes, but is not limited to:</p>
+    <ul>
+      <li>Posting requests for someone to complete your assignment, exam, quiz, or any graded academic submission</li>
+      <li>Offering to complete assignments, exams, quizzes, or graded work on behalf of another student for payment or any other consideration</li>
+      <li>Using Campus Gigs to circumvent academic integrity policies of IIT Roorkee or any other institution</li>
+    </ul>
+    <div class="callout">
+      <p>Skill-based services such as designing presentations, creating graphics, editing videos, tutoring concepts, and explaining topics are <strong>permitted</strong> provided they do not constitute direct academic submission on behalf of another student.</p>
+    </div>
+    <div class="callout-warn">
+      <p>Any violation of this section will result in <strong>immediate account suspension</strong> and may be reported to the IIT Roorkee administration.</p>
+    </div>
+  </section>
+
+  <!-- Section 9 -->
+  <section class="section" id="s9">
+    <span class="section-number">09</span>
+    <h2>Prohibited Activities</h2>
+    <p>The following are strictly prohibited on CampusShare:</p>
+    <ul>
+      <li>Sharing, uploading, or distributing obscene, offensive, or illegal content</li>
+      <li>Collecting personal data of other users without their consent</li>
+      <li>Using automated scripts, bots, or scrapers on the platform</li>
+      <li>Attempting to reverse-engineer, hack, or compromise the security of the application</li>
+      <li>Creating multiple accounts to circumvent bans or verification requirements</li>
+      <li>Any activity that constitutes a security breach, data theft, or unauthorized access</li>
+    </ul>
+  </section>
+
+  <!-- Section 10 -->
+  <section class="section" id="s10">
+    <span class="section-number">10</span>
+    <h2>Termination</h2>
+    <p>CampusShare reserves the right to suspend or permanently terminate any account at its sole discretion, including for:</p>
+    <ul>
+      <li>Violation of these Terms of Use</li>
+      <li>Providing false registration information</li>
+      <li>Academic integrity violations</li>
+      <li>Security breaches or attempted unauthorized access</li>
+      <li>Repeated negative trust score deductions indicating pattern of misconduct</li>
+    </ul>
+  </section>
+
+  <!-- Section 11 -->
+  <section class="section" id="s11">
+    <span class="section-number">11</span>
+    <h2>Disclaimer of Warranties</h2>
+    <p>CampusShare is provided on an <strong>'as is'</strong> basis. We do not guarantee uninterrupted access, error-free operation, or the accuracy of user-generated content. CampusShare is not responsible for any loss, damage, or harm arising from interactions between users on the platform.</p>
+  </section>
+
+  <!-- Section 12 -->
+  <section class="section" id="s12">
+    <span class="section-number">12</span>
+    <h2>Changes to Terms</h2>
+    <p>CampusShare reserves the right to modify these Terms at any time. Continued use of the application after changes constitutes acceptance of the updated Terms. We will notify users of material changes through the application.</p>
+  </section>
+
+  <!-- Section 13 -->
+  <section class="section" id="s13">
+    <span class="section-number">13</span>
+    <h2>Contact</h2>
+    <p>For questions about these Terms of Use, contact us at: <a class="contact-link" href="mailto:campusshare.iitr@gmail.com">campusshare.iitr@gmail.com</a></p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="brand-sm">Campus<span>Share</span></div>
+  <p>© 2026 CampusShare (IIT Roorkee Pilot). All rights reserved.</p>
+</footer>
+
+</body>
+</html>
